@@ -5,10 +5,14 @@
     :increment="increment" 
     :reset="reset"
   />
+
+  <TaskList />
 </template>
 
 <script setup lang="ts">
+  import TaskList from './components/Tasklist.vue'
   import Count from './components/Count.vue'
+
   import { ref } from 'vue'
  
   const count = ref(0) 
