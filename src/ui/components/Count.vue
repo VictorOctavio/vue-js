@@ -1,5 +1,5 @@
 <template>
-    <h1>Hello world, mi contador {{ countValue }}</h1>
+    <h1>Hello world, mi contador {{ count }}</h1>
     <div class="wrapper">
         <button @click="increment">+</button>
         <button @click="decrement">-</button>
@@ -8,14 +8,11 @@
 </template>
 
 <script setup lang="ts">
-   
-    defineProps<{
-        increment: () => Number,
-        decrement: () => Number | false,
-        reset: () => Number,
-        countValue: Number
-    }>()
-    
+    import { ref } from 'vue'
+    const count = ref(0) 
+    const increment = () => count.value++
+    const decrement = () => count.value > 0 && count.value--
+    const reset = () => count.value = 0
 </script>
 
 <style scoped>

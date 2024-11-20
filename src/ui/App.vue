@@ -1,26 +1,21 @@
 <template>
-  <Count 
-    :countValue=count  
-    :decrement=decrement 
-    :increment="increment" 
-    :reset="reset"
-  />
-
-  <TaskList />
+  <div class="wrapper">
+    <Sidebar v-if="token" />
+    <router-view />
+  </div>
 </template>
 
 <script setup lang="ts">
-  import TaskList from './components/Tasklist.vue'
-  import Count from './components/Count.vue'
+  import Sidebar from './components/Sidebar.vue';
+  import { ref } from 'vue';
 
-  import { ref } from 'vue'
- 
-  const count = ref(0) 
-  const increment = () => count.value++
-  const decrement = () => count.value > 0 && count.value--
-  const reset = () => count.value = 0
-
+  const token = ref<string | null>('asdas');
 </script>
 
 <style scoped>
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr;
+}
 </style>
