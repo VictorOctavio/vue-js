@@ -21,11 +21,14 @@
 <script setup>
     import { Form, Field, ErrorMessage } from 'vee-validate';
     import { validationSchema } from '../schemas/validationSchema';
-
-    const onSubmit = () => {
-        console.log('submit..');
-        alert('submit..');
+    import { useRegisterStore } from '../stores/registerStore';
+    
+    const { saveRegisterForm } = useRegisterStore();
+    
+    const onSubmit = (data) => {
+        saveRegisterForm(data)
     }
+    
 </script>
 
 <style scoped>
