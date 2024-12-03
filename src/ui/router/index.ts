@@ -23,6 +23,11 @@ const router = createRouter({
             path: "/login",
             name: Routes.Login,
             component: () => import("../views/public/LoginView.vue")
+        },
+        {
+            path: "/calculate",
+            name: Routes.Calculate,
+            component: () => import("../modules/calculate/views/CalculateView.vue")
         }
     ]
 })
