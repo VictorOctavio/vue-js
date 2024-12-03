@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="header-title">Temp acutal: <Weather :temp="10"/> </div>
+        <Weather />
     </header>
 </template>
 
@@ -20,6 +20,7 @@
         position: sticky;
         top: 0;
         color: white;
+        margin-bottom: 50px;
     }
 
     .header-title {
