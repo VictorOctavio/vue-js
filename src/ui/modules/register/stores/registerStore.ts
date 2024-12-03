@@ -15,7 +15,8 @@ export const useRegisterStore = defineStore('register', () => {
 
 
     const saveRegisterForm = (form: RegisterForm) => {
-        registerForm.value = form;
+        registerForm.value.email = form.email;
+        registerForm.value.nickname = form.nickname;
     }
 
 

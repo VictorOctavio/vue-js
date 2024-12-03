@@ -15,6 +15,8 @@
             </div>
             <button type="submit">Register</button>
         </Form>
+
+        <p>{{ registerForm.email }} - {{ registerForm.nickname }}</p>
     </div>
 </template>
 
@@ -23,7 +25,7 @@
     import { validationSchema } from '../schemas/validationSchema';
     import { useRegisterStore } from '../stores/registerStore';
     
-    const { saveRegisterForm } = useRegisterStore();
+    const { saveRegisterForm, registerForm } = useRegisterStore();
     
     const onSubmit = (data) => {
         saveRegisterForm(data)

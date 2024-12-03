@@ -1,4 +1,5 @@
 <template>
+  <Header></Header>
   <div class="wrapper">
     <Sidebar v-if="token" />
     <router-view />
@@ -7,6 +8,8 @@
 
 <script setup lang="ts">
   import Sidebar from './components/Sidebar.vue';
+  import Header from './components/Header.vue';
+
   import { ref } from 'vue';
 
   const token = ref<string | null>('asdas');
